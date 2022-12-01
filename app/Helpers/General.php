@@ -28,11 +28,19 @@ function generateForgetPasswordNumber() {
 function uploadImage($folder, $image)
 {
     $filename = $image->hashName();
-    $path2 = base_path("images/".$folder);
+    $path2 = public_path("images/".$folder);
     $image->move($path2,$filename);
     $path = 'images/' . $folder . '/' . $filename;
     return $path;
 }
+// function uploadImage($folder, $image)
+// {
+//     $filename = $image->hashName();
+//     $path2 = public_path("images/".$folder);
+//     $image->move($path2,$filename);
+//     $path = 'images/' . $folder . '/' . $filename;
+//     return $path;
+// }
 
 function sendmessage( $user, $title , $body)
 {
